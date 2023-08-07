@@ -47,5 +47,7 @@ jupyter notebook licence plate.ipynb
 8. **Text Overlay:** The extracted text is displayed on the original image along with a rectangle drawn around the detected license plate. 
 # Results
   - Upon running the script, you will see the original image with the detected license plate, and the extracted text will be displayed on the image. The text represents the characters recognized from the license plate.
-    
   - Feel free to experiment with different images or try fine-tuning the parameters for better license plate detection results.
+
+    
+
