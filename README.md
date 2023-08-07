@@ -33,17 +33,19 @@ cd License-Plate-Recognition-
 ```
   3. Run the Jupyter Notebook file:
 ```bash
-jupyter notebook DeepLearning_MNIST_Classification.ipynb
+jupyter notebook licence plate.ipynb
+
 ```
 ## Procedure 
-1. **Dataset Loading**: The MNIST dataset is loaded using Keras, consisting of 60,000 training images and 10,000 test images, each of size 28x28 pixels.  
-2. **Data Preprocessing**: Images are reshaped and scaled, and labels are one-hot encoded.  
-3. **Model Architecture**: A neural network model with two layers is created using Keras.   
-4. **Model Compilation**: The model is compiled using the rmsprop optimizer and categorical crossentropy loss.   
-5. **Model Training**: The model is trained for 10 epochs with a batch size of 128.   
-6. **Model Evaluation**: After training, the model's performance is evaluated on the test dataset and the predictions and actual labels are also shown.
-
+1. **Image Loading:** The script loads the input image ('image4.jpg') using OpenCV.  
+2. **Preprocessing:** The image is converted to grayscale to reduce complexity and facilitate edge detection. 
+3. **Edge Detection:** The Canny edge detection algorithm is applied to identify potential edges in the image.  
+4. **Contour Extraction:** Contours are identified in the edge-detected image using the findContours function from OpenCV.   
+5. **License Plate Location:** The script identifies the location of the license plate by approximating a quadrilateral contour that matches the shape of the plate   
+6. **Cropping:** The detected license plate region is cropped from the original image.
+7. **Text Recognition:** The cropped image containing the license plate text is passed to the EasyOCR reader, which extracts the text.
+8. **Text Overlay:** The extracted text is displayed on the original image along with a rectangle drawn around the detected license plate. 
 # Results
-  - Upon running the Jupyter Notebook, you'll see the training progress and final evaluation results, including accuracy and the actual and predicted labels for the digits.
+  - Upon running the script, you will see the original image with the detected license plate, and the extracted text will be displayed on the image. The text represents the characters recognized from the license plate.
     
-  - Feel free to experiment with different hyperparameters and model architectures to improve accuracy.
+  -Feel free to experiment with different images or try fine-tuning the parameters for better license plate detection results.
